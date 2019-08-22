@@ -101,8 +101,9 @@ void app_main()
     vTaskDelay(30 / portTICK_PERIOD_MS);
     ESP_LOGI("esp-eye", "Please say 'Hi LeXin' to the board");
     ESP_LOGI("esp-eye", "Version "VERSION);
-    while (g_state == WAIT_FOR_WAKEUP)
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
+    //while (g_state == WAIT_FOR_WAKEUP)
+    //    vTaskDelay(1000 / portTICK_PERIOD_MS);
+	g_state = WAIT_FOR_CONNECT; //Simulo que ya ha activado la voz y debo poner en este estado
     app_wifi_init();
     app_camera_init();
     app_httpserver_init();
